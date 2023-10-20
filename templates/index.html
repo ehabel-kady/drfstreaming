@@ -133,7 +133,12 @@ $('#stop_stream').on('click',function(){
 
 
 </script>
-
+<script>
+  const evtSource = new EventSource('{%url "generate_stream"%}')
+  evtSource.onmessage = (event) => {
+    console.log(event)
+  }
+</script>
 </body>
 
 
